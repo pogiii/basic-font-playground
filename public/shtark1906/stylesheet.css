@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Shtark 1906 Triple';
+    src: url('/shtark1906/triple.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Shtark 1906 Double';
+    src: url('/shtark1906/double.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Shtark 1906 Single';
+    src: url('/shtark1906/single.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

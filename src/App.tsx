@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Container } from './components/ui/contaner'
+import { Playground } from './components/ui/playground'
+import { ToggleGroup, ToggleGroupItem } from './components/ui/toggle-group';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
+  const [value, setValue] = useState<string>('');
+  const [fontFamily, setFontFamily] = useState<string>('shtark-1906');
   return (
-    <>
+    <Container>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <h1 className="text-white">
+          פונט שטארק
+        </h1>
+        <ToggleGroup type="single">
+          <ToggleGroupItem value="1906">1906</ToggleGroupItem>
+          <ToggleGroupItem value="2024">2024</ToggleGroupItem>
+        </ToggleGroup>
+      </div> 
+      <Playground fontFamily={fontFamily} value={value} setValue={setValue} />
+    </Container>
   )
 }
 
