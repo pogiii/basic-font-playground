@@ -7,10 +7,9 @@ import { Label } from "./label";
 type PlaygroundProps = {
     value?: string;
     setValue: React.Dispatch<React.SetStateAction<string>>;
-    fontFamily: string
 };
 
-export const Playground = ({ value = '', setValue, fontFamily }: PlaygroundProps): JSX.Element => {
+export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Element => {
     const [fontSize, setFontSize] = useState<number[]>([11]);
     const [fontVariant, setFontVariant] = useState<string>('single');
 
@@ -60,7 +59,7 @@ export const Playground = ({ value = '', setValue, fontFamily }: PlaygroundProps
             <div className="w-full h-[74.58%] flex items-center justify-center">
                 <div className="h-full w-full flex items-center justify-center overflow-hidden">
                     <span
-                        className={`leading-none ${fontFamily}-${fontVariant}`}
+                        className={`leading-none shtark-1906-${fontVariant}`}
                         dir="rtl"
                         style={{
                             fontSize: `${fontSize}rem`,
