@@ -21,8 +21,8 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
     const handleSliderChange = (e: number[]) => { setFontSize(e) }
 
     return (
-        <div dir="rtl" className="h-[40%] w-auto text-white border-[1px] overflow-hidden max-w-[90%] aspect-[4.31/1]">
-            <div className="p-8 w-full h-[25.42%] border-b-[1px] flex items-center gap-16 justify-between space-between">
+        <div dir="rtl" className="h-[100%] w-full text-white border-[1px] overflow-hidden">
+            <div className="p-8 w-full h-[10%] border-b-[1px] flex items-center gap-16 justify-between space-between">
                 <Input
                     value={value}
                     onChange={handleInputChange}
