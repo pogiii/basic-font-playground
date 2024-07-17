@@ -56,8 +56,8 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                     </ToggleGroupItem>
                 </ToggleGroup>
             </div>
-            <div className="w-full h-[74.58%] flex items-center justify-center">
-                <div className="h-full w-full flex items-center justify-center overflow-hidden">
+            <div className="w-full h-[80%] bg-[#EEE7E1] flex items-center justify-center">
+                <div className="h-full w-full flex text-black items-center justify-center overflow-hidden">
                     <span
                         className={`leading-none shtark-1906-${fontVariant}`}
                         dir="rtl"
