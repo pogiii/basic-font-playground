@@ -21,8 +21,8 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
     const handleSliderChange = (e: number[]) => { setFontSize(e) }
 
     return (
-        <div dir="rtl" className="h-[100%] w-full text-white border-[1px] overflow-hidden">
-            <div className="p-8 w-full h-[10%] border-b-[1px] flex items-center gap-16 justify-between space-between">
+        <div dir="rtl" className="h-[100%] w-full text-white overflow-hidden">
+            <div className="p-8 w-full h-[10%] flex items-center gap-16 justify-between space-between">
                 <Input
                     value={value}
                     onChange={handleInputChange}
@@ -57,9 +57,9 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                 </ToggleGroup>
             </div>
             <div className="w-full h-[80%] bg-[#EEE7E1] flex items-center justify-center">
-                <div className="h-full w-full flex text-black items-center justify-center overflow-hidden">
+                <div className="h-full w-full flex text-black items-center justify-center overflow-hidden text-wrap">
                     <span
-                        className={`leading-none shtark-1906-${fontVariant}`}
+                        className={`leading-none w-[90%] text-center shtark-1906-${fontVariant}`}
                         dir="rtl"
                         style={{
                             fontSize: `${fontSize}rem`,
