@@ -109,3 +109,7 @@
 .shtark-1906-triple {
   font-family:  Shtark Old Triple, sans-serif, system-ui;
 }
+
+.transition-all-15 {
+  transition: all 0.15s ease;
+}

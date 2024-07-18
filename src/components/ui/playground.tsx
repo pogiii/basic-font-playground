@@ -10,8 +10,8 @@ type PlaygroundProps = {
 };
 
 export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Element => {
-    const [fontSize, setFontSize] = useState<number[]>([11]);
-    const [fontVariant, setFontVariant] = useState<string>('single');
+    const [fontSize, setFontSize] = useState<number[]>([70]);
+    const [fontVariant, setFontVariant] = useState<string>('double');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setValue(e.target.value);
@@ -31,27 +31,22 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                 />
                 <div className="w-full flex flex-row-reverse gap-4">
                     <Slider
-                        min={5}
-                        max={16}
+                        min={60}
+                        max={120}
                         value={fontSize}
                         onValueChange={handleSliderChange}
                     />
-                    <Label className="w-[1rem]">{fontSize}</Label>
+                    <Label className="w-[1rem] ml-[26px]">{fontSize}px</Label>
                 </div>
-                <ToggleGroup onValueChange={(val:string) => {setFontVariant(val)}} dir="rtl" defaultValue="normal" type="single">
-                    <ToggleGroupItem value="single" aria-label="Toggle Normal">
+                <ToggleGroup onValueChange={(val:string) => {setFontVariant(val)}} dir="rtl" defaultValue="double" type="single">
+                    <ToggleGroupItem className="pr-[32px] pl-[32px] pt-[2px] pb-[2px]" value="double" aria-label="Toggle Double">
                         <span>
-                            רגיל
+                            יחיד
                         </span>
                     </ToggleGroupItem>
-                    <ToggleGroupItem value="double" aria-label="Toggle Double">
+                    <ToggleGroupItem className="pr-[32px] pl-[32px] pt-[2px] pb-[2px]" value="triple" aria-label="Toggle Quad">
                         <span>
-                            מוכפל
-                        </span>
-                    </ToggleGroupItem>
-                    <ToggleGroupItem value="triple" aria-label="Toggle Quad">
-                        <span>
-                            מרובע
+                            כפול
                         </span>
                     </ToggleGroupItem>
                 </ToggleGroup>
@@ -59,10 +54,10 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
             <div className="w-full h-[80%] bg-[#EEE7E1] flex items-center justify-center">
                 <div className="h-full w-full flex text-black items-center justify-center overflow-hidden text-wrap">
                     <span
-                        className={`leading-none w-[90%] text-center shtark-1906-${fontVariant}`}
+                        className={`leading-none w-[90%] transition-all-15 text-center shtark-1906-${fontVariant}`}
                         dir="rtl"
                         style={{
-                            fontSize: `${fontSize}rem`,
+                            fontSize: `${fontSize}px`,
                         }}
                     > {value}
                     </span>
