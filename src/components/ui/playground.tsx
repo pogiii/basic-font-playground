@@ -32,13 +32,13 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                 <div className="w-full flex flex-row-reverse gap-4">
                     <Slider
                         min={60}
-                        max={120}
+                        max={220}
                         value={fontSize}
                         onValueChange={handleSliderChange}
                     />
-                    <Label className="w-[1rem] ml-[26px]">{fontSize}px</Label>
+                    <Label className="w-[1rem] ml-[26px]">{fontSize}pt</Label>
                 </div>
-                <ToggleGroup onValueChange={(val:string) => {setFontVariant(val)}} dir="rtl" defaultValue="double" type="single">
+                <ToggleGroup onValueChange={(val: string) => { setFontVariant(val) }} dir="rtl" defaultValue="double" type="single">
                     <ToggleGroupItem className="pr-[32px] pl-[32px] pt-[2px] pb-[2px]" value="double" aria-label="Toggle Double">
                         <span>
                             יחיד
@@ -49,6 +49,16 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                             כפול
                         </span>
                     </ToggleGroupItem>
+                    <ToggleGroupItem className="pr-[32px] pl-[32px] pt-[2px] pb-[2px]" value="tile" aria-label="Toggle Ariach">
+                        <span>
+                            אריח
+                        </span>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem className="pr-[32px] pl-[32px] pt-[2px] pb-[2px]" value="square" aria-label="Toggle Framed">
+                        <span>
+                            ממוסגר
+                        </span>
+                    </ToggleGroupItem>
                 </ToggleGroup>
             </div>
             <div className="w-full h-[80%] bg-[#EEE7E1] flex items-center justify-center">
@@ -57,7 +67,7 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                         className={`leading-none w-[90%] transition-all-15 text-center shtark-1906-${fontVariant}`}
                         dir="rtl"
                         style={{
-                            fontSize: `${fontSize}px`,
+                            fontSize: `${fontSize}pt`,
                         }}
                     > {value}
                     </span>
