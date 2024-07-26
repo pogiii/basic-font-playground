@@ -3,7 +3,6 @@ import { Input } from "./input";
 import { Slider } from "./slider";
 import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
 import { Label } from "./label";
-import { Button } from "./button";
 
 type PlaygroundProps = {
     value?: string;
@@ -23,14 +22,14 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
 
     return (
         <div dir="rtl" className="h-[100%] w-full text-white overflow-hidden">
-            <div className="p-8 w-full h-[10%] flex items-center gap-16 justify-between space-between">
+            <div className="max-sm:flex-col max-sm:p-4 max-sm:gap-4 max-sm:h-auto p-8 w-full h-[10%] flex items-center gap-16 justify-between space-between">
                 <Input
                     value={value}
                     onChange={handleInputChange}
                     className="bg-black"
                     placeholder="הקלד כאן"
                 />
-                <div className="w-full flex flex-row-reverse gap-4">
+                <div className="max-sm:hidden w-full flex flex-row-reverse gap-4">
                     <Slider
                         min={60}
                         max={220}
@@ -73,11 +72,6 @@ export const Playground = ({ value = '', setValue }: PlaygroundProps): JSX.Eleme
                     > {value}
                     </span>
                 </div>
-            </div>
-            <div className="w-full h-[10%] items-center p-8 flex">
-                <a href="https://www.figma.com/proto/b5uT7QWhcOMx9Hm7THbGFx/Shtark-Otnamental?node-id=277-362&t=bMAHwZ5475JxglFp-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=277%3A362">
-                    <Button variant={"secondary"}>חזרה לאתר</Button>
-                </a>
             </div>
         </div>
     );
